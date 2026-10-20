@@ -1,0 +1,13 @@
+# Do not upload Blender sources or temporary files to GitHub Pages.
+*.blend
+*.blend1
+*.blend2
+*.blend@
+.DS_Store
+Thumbs.db
+node_modules/
+
+# Third-party source models and full-resolution texture pack
+device5.FBX
+device5_textures.zip
+*.blend

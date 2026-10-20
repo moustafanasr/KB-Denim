@@ -1,0 +1,80 @@
+/* KB Denim / Studio motion direction — the 3D demonstrates itself before input.
+   Art-direction layer over the original responsive editorial CSS. */
+:root{--interactive-brass:#d8b587}
+.live-pin{display:inline-block;width:7px;height:7px;flex:0 0 7px;border-radius:50%;background:#75c2a6;box-shadow:0 0 0 5px rgba(117,194,166,.15);animation:livePulse 2.3s ease-in-out infinite}
+@keyframes livePulse{50%{box-shadow:0 0 0 9px rgba(117,194,166,0);opacity:.7}}
+/* Hero: real photography remains the primary image. Interactive fabric is a
+   restrained live specimen pinned to the factory image, not a generic 3D hero. */
+.hero-visual{isolation:isolate}
+.hero-image-serial{transform:translate3d(var(--hero-shift-x,0px),var(--hero-shift-y,0px),0);transition:transform .3s ease-out}
+.hero-live3d{position:absolute;right:clamp(18px,2.3vw,36px);top:clamp(28px,3vw,55px);width:clamp(184px,17vw,263px);height:clamp(239px,24vw,335px);z-index:5;display:grid;grid-template-rows:auto 1fr auto auto;overflow:hidden;background:#e5e8e6ee;border:1px solid rgba(255,255,255,.58);box-shadow:0 18px 50px #0915263d;backdrop-filter:blur(8px);color:#173148;transition:box-shadow .3s,transform .35s ease;transform:translate3d(0,0,0)}
+.hero-live3d:hover{box-shadow:0 25px 65px #09152666;transform:translate3d(0,-4px,0)}
+.hero-live3d-heading{padding:15px 14px 4px;display:flex;align-items:center;gap:11px;font:600 10px var(--mono);letter-spacing:.05em;z-index:2;pointer-events:none}
+#heroFabricCanvas{width:100%;height:100%;min-height:0;display:block;cursor:grab;touch-action:none;opacity:0;transition:opacity .6s}
+.hero-ready #heroFabricCanvas{opacity:1}
+#heroFabricCanvas:active{cursor:grabbing}
+.hero-live3d:before{content:'';position:absolute;z-index:-1;inset:0;background:radial-gradient(ellipse at 60% 40%,#e9eef0,#a9b9c0);pointer-events:none}
+.hero-live3d-gesture{font:600 9px var(--mono);letter-spacing:.07em;padding:0 14px 12px;pointer-events:none}
+.hero-live3d-link{font:600 9px/1.3 var(--mono);letter-spacing:.01em;display:flex;align-items:center;justify-content:space-between;background:#173148;color:white;padding:14px;min-height:43px;transition:background .2s}
+.hero-live3d-link:hover{background:#355b82}.hero-live3d-link span{font-size:15px}
+/* The model tells the story before controls: cinematic orbit and viewpoints. */
+.warehouse3d-stage{isolation:isolate}
+.tour-discovery{position:absolute;left:30px;top:100px;z-index:8;display:flex;gap:14px;align-items:center;max-width:min(360px,calc(100% - 60px));background:#0c2638df;border:1px solid #c6d8e322;backdrop-filter:blur(8px);padding:15px 18px;color:white;pointer-events:none;transition:opacity .3s,transform .3s}
+.tour-discovery-icon{width:41px;height:41px;flex:0 0 41px;border:1px solid #adcad879;border-radius:50%;display:grid;place-items:center;font-size:22px;animation:rotateOutline 4s linear infinite;color:#91ccb8}
+.tour-discovery.paused .tour-discovery-icon{animation-play-state:paused;color:#e7c898}
+.tour-discovery strong{font:600 11px var(--mono);letter-spacing:.075em;display:block;margin-bottom:6px}
+.tour-discovery small{font-size:12px;line-height:1.45;color:#cddce5;display:block}
+.tour-progress{position:absolute;top:0;left:0;width:100%;height:3px;background:#ffffff18;z-index:10;pointer-events:none}
+.tour-progress span{display:block;width:100%;height:100%;background:#9ccabf;transform-origin:left;animation:tourProgress 5200ms linear infinite}
+@keyframes tourProgress{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes rotateOutline{to{transform:rotate(360deg)}}
+#toggleAutoTour[aria-pressed=true]{background:#d9e7e0;color:#142d42;border:1px solid #142d4240}
+#toggleAutoTour[aria-pressed=false]{background:#173148;color:white}
+.warehouse3d-stage .warehouse3d-live{color:#d7f0df}
+/* Material lab: three physical drapes rendered from the fabric GLB.
+   One large active fabric, two secondary studies behind it. */
+.material-stage{background:#aebfc9}
+.material-stage:before{background:radial-gradient(ellipse at 50% 44%,#dde7e9 0%,#b3c4ce 66%,#91a4b0 100%)}
+.fabric-live-badge{position:absolute;top:54px;left:22px;z-index:6;font:600 10px var(--mono);letter-spacing:.07em;color:#173148;display:flex;align-items:center;gap:10px;pointer-events:none}
+.fabric-motion-label{position:absolute;bottom:62px;left:22px;z-index:7;background:#f0f4f1db;padding:10px 13px;font:600 10px var(--mono);letter-spacing:.055em;color:#173148;pointer-events:none}
+.fabric-auto-line{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:24px 0 14px;padding:13px 0;border-top:1px solid #29486255;border-bottom:1px solid #29486255}
+.fabric-auto-line>span{font:600 9px var(--mono);letter-spacing:.04em;display:flex;align-items:center;gap:12px;line-height:1.4}
+.fabric-auto-line button{background:#173148;color:#fff;padding:9px 14px;min-width:77px;border:1px solid #173148;font:600 10px var(--mono);transition:background .2s}
+.fabric-auto-line button:hover{background:#37628a}
+.fabric-auto-line button[aria-pressed=false]{background:transparent;color:#173148}
+.material-options .fabric-choices{margin-top:0}
+.fabric-option.active{background:rgba(215,229,233,.6)}
+.fabric-option .swatch{transition:transform .4s}.fabric-option.active .swatch{transform:scale(1.13)}
+/* Minor, tangible cues for the technology — no overly animated cards. */
+.machine-viewport.machine-ready .machine-status-dot{animation:livePulse 2s infinite}
+.machine-viewport #machineCanvas,.material-stage canvas,.warehouse3d-stage canvas{outline-offset:-5px}
+@media(max-width:1050px){.hero-live3d{width:195px;height:250px}.hero-live3d-heading{font-size:9px}}
+@media(max-width:700px){
+ .hero-live3d{width:137px;height:176px;right:13px;top:15px;border-color:#fff9;box-shadow:0 12px 29px #07132450}
+ .hero-live3d-heading{font-size:8px;padding:10px 9px 0;gap:8px}
+ .hero-live3d .live-pin{width:6px;height:6px;flex-basis:6px}
+ .hero-live3d-gesture{display:none}
+ .hero-live3d-link{font-size:7px;letter-spacing:-.01em;padding:8px 9px;min-height:36px}
+ .hero-live3d-link span{font-size:11px}
+ .hero-label{max-width:calc(100% - 164px);min-width:148px}
+ .tour-discovery{left:12px;top:62px;gap:9px;max-width:calc(100% - 24px);padding:10px 11px}
+ .tour-discovery-icon{width:31px;height:31px;flex-basis:31px;font-size:17px}
+ .tour-discovery strong{font-size:9px;margin-bottom:3px}.tour-discovery small{font-size:10px}
+ .tour-progress{height:2px}
+ .fabric-live-badge{top:51px;left:14px;font-size:8px}
+ .fabric-motion-label{bottom:52px;left:12px;font-size:8px;padding:7px 9px}
+ .fabric-auto-line{margin:12px 0 10px;padding:9px 0}.fabric-auto-line>span{font-size:9px;gap:10px}.fabric-auto-line button{font-size:9px;padding:10px 12px}
+}
+@media(max-width:370px){.hero-live3d{width:121px;height:156px;right:10px;top:12px}.hero-live3d-link{font-size:6.5px}.hero-label{min-width:139px;max-width:calc(100% - 143px)}.tour-discovery small{max-width:216px}}
+@media(prefers-reduced-motion:reduce){.live-pin,.tour-discovery-icon,.tour-progress span{animation:none!important}.hero-live3d,#heroFabricCanvas{transition:none}.hero-image-serial{transform:none}}
+
+/* An intentional material photograph holds the interactive specimen's place
+   while the real fabric model decodes. Never leave an empty rectangle. */
+.hero-live3d{isolation:isolate}
+.hero-live3d-fallback{position:absolute;inset:41px 0 48px;display:flex;align-items:center;justify-content:center;pointer-events:none;z-index:0;transition:opacity .5s ease}
+.hero-live3d-fallback img{width:79%;height:88%;object-fit:cover;clip-path:polygon(6% 2%,94% 0,99% 82%,82% 100%,4% 93%,0 15%);filter:saturate(.76);box-shadow:4px 8px 20px #21476330}
+.hero-ready .hero-live3d-fallback{opacity:0}
+#heroFabricCanvas{z-index:1;position:relative}
+.hero-live3d-heading,.hero-live3d-gesture,.hero-live3d-link{position:relative;z-index:2}
+@media(max-width:700px){.hero-live3d-fallback{inset:30px 0 34px}}
+@media(max-width:700px){#fabricCanvas,#warehouseCanvas,#machineCanvas{touch-action:pan-y}}

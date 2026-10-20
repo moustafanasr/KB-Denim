@@ -1,0 +1,42 @@
+
+/* Industrial machinery exhibition — purpose-built presentation, not generic cards. */
+.machine-showcase{background:#e5e6df;color:#102d42;padding-top:105px;padding-bottom:112px;position:relative}
+.machine-heading{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(280px,.5fr);gap:36px;align-items:end;margin:42px 0 43px}
+.machine-heading h2{font-size:clamp(66px,6.5vw,114px);line-height:.95;margin:16px 0 0}
+.machine-heading-copy{max-width:330px;justify-self:end}.machine-heading-copy p{font-size:16px;line-height:1.58;margin:0 0 30px}
+.machine-heading-copy>span,.machine-panel-top,.machine-status,.machine-viewport-top,.machine-label,.machine-panel-bottom>span{font:500 10px var(--mono);letter-spacing:.06em}
+.machine-shell{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(300px,.58fr);min-height:660px;overflow:hidden}
+.machine-viewport{height:660px;min-height:400px;position:relative;background:radial-gradient(ellipse at 55% 40%,#e5e8e5 0%,#bec6c2 85%);overflow:hidden;isolation:isolate}
+.machine-grid-back{position:absolute;inset:0;opacity:.18;pointer-events:none;background-image:linear-gradient(#30495555 1px,transparent 1px),linear-gradient(90deg,#30495555 1px,transparent 1px);background-size:58px 58px;mask-image:linear-gradient(to bottom,transparent,#000 65%,transparent)}
+.machine-poster{position:absolute;inset:0;z-index:1;display:grid;place-items:center;transition:opacity .55s;pointer-events:none}.machine-poster img{width:86%;height:78%;object-fit:contain}.machine-poster>span{position:absolute;bottom:23%;color:#405b62;font:10px var(--mono)}
+.machine-viewport.machine-ready .machine-poster{opacity:0}
+.machine-viewport canvas{width:100%;height:100%;position:absolute;inset:0;z-index:2;cursor:grab;touch-action:none;opacity:0;transition:opacity .5s}
+.machine-viewport.machine-ready canvas{opacity:1}.machine-viewport canvas:active{cursor:grabbing}
+.machine-viewport-top{position:absolute;top:22px;left:24px;right:24px;z-index:3;display:flex;justify-content:space-between;pointer-events:none;color:#153e52}
+.machine-status-dot{width:6px;height:6px;background:#3b8869;display:inline-block;border-radius:50%;margin-right:6px}
+.machine-label{position:absolute;left:24px;bottom:92px;z-index:3;background:#f3f4efdc;color:#173a4a;padding:12px 14px;max-width:60%;line-height:1.5;pointer-events:none}
+.machine-toolbar{display:flex;position:absolute;left:24px;bottom:22px;z-index:3;gap:6px}.machine-toolbar button{width:44px;height:44px;border:1px solid #577486a0;background:#f6f7f3e6;color:#183b4a;font-size:21px;cursor:pointer;transition:background .18s,color .18s}
+.machine-toolbar button:hover,.machine-toolbar button[aria-pressed=true]{background:#193a4b;color:#fff}
+.machine-toolbar button:disabled{opacity:.45;cursor:wait}
+.machine-status{position:absolute;right:22px;bottom:34px;z-index:3;max-width:205px;text-align:right;color:#1f4959;line-height:1.5}
+.machine-panel{display:flex;flex-direction:column;background:#142d40;color:#e5ebe9;padding:27px 30px}
+.machine-panel-top{display:flex;justify-content:space-between;padding:7px 0 26px;color:#b0c1c7}
+.machine-view{display:grid;grid-template-columns:29px 1fr 20px;gap:16px;align-items:center;text-align:left;background:transparent;border:0;border-top:1px solid #ffffff38;color:#f2f6f4;padding:23px 0;cursor:pointer}
+.machine-view.is-active{color:#f1d6a6}.machine-view:disabled{cursor:wait}.machine-view:hover:not(:disabled){color:#f1d6a6}
+.machine-view-index{font:10px var(--mono);color:#a1b6c0}.machine-view strong{font-size:17px;font-weight:500;display:block;line-height:1.15}.machine-view small{font-size:11px;color:#b0c4ce;display:block;margin-top:9px;line-height:1.4}.machine-view b{font-size:19px;font-weight:400}
+.machine-panel-bottom{margin-top:auto;border-top:1px solid #ffffff42;padding:27px 0 0}.machine-panel-bottom>span{color:#ebca90}.machine-panel-bottom p{font-size:13px;line-height:1.65;color:#d4e0df;margin:12px 0 22px}.machine-panel-bottom small{font-size:10px;line-height:1.5;display:block;color:#91a6b3;margin-bottom:23px}
+.machine-panel-bottom a{font:500 10px var(--mono);color:#f7e2bb;border-bottom:1px solid #f7e2bb;padding-bottom:6px;text-decoration:none;display:inline-block}
+.machine-viewport:fullscreen{width:100vw;height:100dvh;background:#c9d3d0}
+.machine-viewport:fullscreen .machine-status{display:none}
+@media(max-width:1100px){.machine-shell{grid-template-columns:minmax(0,1.5fr) minmax(280px,.7fr)}.machine-heading h2{font-size:clamp(60px,7vw,95px)}.machine-viewport{height:580px}.machine-shell{min-height:580px}.machine-panel{padding:25px 20px}.machine-view{padding:19px 0}.machine-status{display:none}}
+@media(max-width:800px){.machine-showcase{padding:62px 0 76px}.machine-showcase>.section-no,.machine-heading{margin-left:var(--pad);margin-right:var(--pad)}.machine-heading{display:block;margin-top:34px;margin-bottom:30px}.machine-heading h2{font-size:clamp(53px,10vw,85px)}.machine-heading-copy{margin-top:20px;max-width:500px}.machine-heading-copy p{font-size:14px;margin-bottom:12px}.machine-shell{display:flex;flex-direction:column;min-height:0}.machine-viewport{height:min(92vw,490px);min-height:340px}.machine-viewport-top{top:14px;left:15px;right:15px;font-size:9px}.machine-label{bottom:77px;left:13px;max-width:calc(100% - 26px);font-size:9px}.machine-toolbar{left:12px;right:12px;bottom:15px;justify-content:space-between;gap:4px}.machine-toolbar button{width:39px;height:41px;flex:0 0 39px}.machine-status{display:none}.machine-panel{padding:20px var(--pad) 30px;display:block}.machine-panel-top{padding-bottom:16px}.machine-view{padding:15px 0;min-height:58px}.machine-panel-bottom{margin-top:20px;padding-top:20px}.machine-panel-bottom p{font-size:12px;margin-bottom:9px}}
+@media(max-width:370px){.machine-heading h2{font-size:51px}.machine-viewport{min-height:315px}.machine-toolbar button{width:35px;flex-basis:35px;height:38px}.machine-viewport-top>span:last-child{display:none}}
+@media(prefers-reduced-motion:reduce){.machine-poster,.machine-viewport canvas,.machine-toolbar button{transition:none}}
+
+/* The dark neutral viewing bay increases contrast around metallic details. */
+.machine-viewport{background:radial-gradient(ellipse at 48% 42%,#50585b,#383d40 90%)}
+.machine-grid-back{opacity:.085}
+.machine-viewport-top,.machine-status{color:#e4eeec}
+.machine-poster img{width:100%;height:100%;object-fit:contain}
+.machine-label{background:#f0efe6ec}
+.machine-viewport:fullscreen{background:#383d40}

@@ -1,0 +1,149 @@
+/* KB DENIM / 2026 — adaptive art direction, not a squeezed desktop template. */
+.hero-sample-cta{display:inline-flex;align-items:center;margin:15px 0 0 18px;border:0;background:transparent;color:var(--ink);font:600 10px var(--mono);letter-spacing:.06em;cursor:pointer;padding:11px 0;border-bottom:1px solid currentColor}
+.hero-sample-cta:hover{color:#3567a0}
+#fabricCanvas,.warehouse3d-stage canvas,.warehouse-detail-canvas canvas{touch-action:none;cursor:grab}
+#fabricCanvas:active,.warehouse3d-stage canvas:active,.warehouse-detail-canvas canvas:active{cursor:grabbing}
+#fabricCanvas:focus-visible,.warehouse3d-stage canvas:focus-visible,.warehouse-detail-canvas canvas:focus-visible{outline:3px solid #e4c389;outline-offset:-4px}
+.warehouse-detail-canvas.model-loaded .detail-loading{background:#ffffffd9;color:#153149}
+.warehouse3d-stage-top{user-select:none}
+/* Desktop refinement: a clear hierarchy of product, manufacturing, experience, enquiry. */
+@media(min-width:901px){.hero-type{font-size:clamp(72px,7.6vw,132px)}.hero-type .type-mask:last-child span{font-size:.86em}.hero-editorial{display:flex;flex-direction:column}.hero-sample-cta{margin-left:22px;align-self:flex-start;justify-self:start;width:max-content}.hero-bottom-bar{font-size:9px}.warehouse3d-header h2{font-size:clamp(70px,7.5vw,128px)}.collection-heading .section-display{font-size:clamp(56px,5.8vw,106px)}}
+/* Mobile = different information architecture and typographic rhythm. */
+@media(max-width:700px){
+ :root{--pad:22px}
+ html{scroll-padding-top:71px}
+ body{background:#f4f1e9;color:#152f46;font-size:15px}
+ .topline{display:none}
+ .site-head{height:68px;position:sticky;top:0;background:#f4f1e9ed;backdrop-filter:blur(14px);padding:0 22px;border-bottom:1px solid #20394d22;z-index:101}
+ .logo{width:117px}.menu-trigger{width:42px;height:42px}
+ .mobile-nav{top:68px;max-height:calc(100dvh - 68px);overflow-y:auto}
+ main{display:flex;flex-direction:column;min-width:0}
+ main>section{width:100%;min-width:0;flex-shrink:0}
+ .hero{order:1;display:flex;flex-direction:column;min-height:0;grid-template-columns:none;grid-template-rows:none;background:#f4f1e9}
+ .hero-editorial{padding:34px 22px 22px;display:block;min-height:0;height:auto}
+ .hero-kicker{font-size:9px;letter-spacing:.06em;line-height:1.5;display:flex;gap:9px;align-items:center}
+ .hero-kicker .hairline{display:none}
+ .hero-type{font-size:clamp(54px,13.5vw,82px);letter-spacing:-.065em;line-height:.88;margin:29px 0 24px;max-width:100%;white-space:normal}
+ .hero-type .type-mask{padding-bottom:4px;display:block}
+ .hero-intro{margin:0;max-width:100%;padding:0;display:block}
+ .hero-intro p{font-size:15px;line-height:1.5;max-width:370px;margin:0 0 15px;color:#405466}
+ .hero-intro .link-underline{display:inline-flex;font-size:11px;letter-spacing:.02em;align-items:center;justify-content:center;min-height:43px;padding:11px 15px;border:1px solid #17354d;background:#17354d;color:white;text-decoration:none}
+ .hero-sample-cta{margin:9px 0 0 9px;display:inline-flex;font:600 10px var(--mono);letter-spacing:0;padding:12px 2px;white-space:nowrap}
+ .hero-micro{display:none}
+ .hero-visual{min-height:0;height:300px;position:relative;display:block;margin:0 10px 0}
+ .hero-photograph{height:100%;min-height:0}.hero-photograph img{width:100%;height:100%;object-fit:cover;object-position:center}
+ .hero-image-serial{bottom:8px;right:10px;font-size:9px}.hero-label{padding:11px 12px;bottom:12px;left:12px;max-width:200px}.hero-label p{font-size:11px}
+ .hero-bottom-bar{min-height:0;padding:14px 22px 19px;display:flex;gap:0;align-items:center;justify-content:space-between;font-size:9px;line-height:1.35;border:0}
+ .hero-bottom-bar span:nth-child(2){display:none}
+ .section-no{font-size:9px;gap:12px;margin-bottom:23px;padding-bottom:13px;line-height:1.45}
+ .section-no span:last-child{max-width:75%;text-align:right}
+ .section-display{font-size:clamp(44px,12vw,66px);line-height:.98;letter-spacing:-.065em}
+ /* The buyer sees fabrics immediately after the hero. */
+ .collection{order:2;padding:57px 22px 63px;background:#162c45;color:#f4f3ee}
+ .collection-heading{display:block;margin-bottom:26px}
+ .collection-heading .section-display{font-size:clamp(47px,11vw,67px);margin:13px 0 13px;line-height:.97;letter-spacing:-.065em}
+ .collection-head-right{display:flex;width:100%;justify-content:space-between;align-items:center;gap:10px;padding:0}
+ .collection-head-right p{max-width:240px;line-height:1.5;margin:0;font-size:13px;color:#c5d0d8}
+ .collection-controls{flex:none;gap:5px}.collection-controls button{height:38px;width:38px;font-size:19px}
+ .collection-swiper{overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory}
+ .fabric-card{width:min(77vw,365px)!important;margin-right:13px!important}
+ .fabric-card:nth-child(even) .fabric-card-image{margin-top:0}
+ .fabric-card-image{aspect-ratio:1/1.02}.fabric-card-index{font-size:8px;top:10px;left:10px}
+ .fabric-card-caption{padding-top:13px;margin-top:12px}
+ .fabric-card-caption h3{font-size:37px;margin:7px 0}.fabric-card-caption p{font-size:12px;line-height:1.35}
+ .fabric-card-caption button{width:38px;height:38px}
+ .collection-bottom{margin-top:30px;font-size:8px;align-items:center}
+ .collection-bottom a{max-width:46%;line-height:1.5;text-align:right}
+ .editorial-bridge{display:none!important}
+ /* 3D deserves its own cinematic dark spatial stage, not another text-heavy page. */
+ .warehouse3d{order:3;background:#e9eceb;color:#123149;padding:56px 0 64px}
+ .warehouse3d>.section-no,.warehouse3d-top,.warehouse-detail-heading,.warehouse-detail-grid{margin-left:22px;margin-right:22px}
+ .warehouse3d .section-no{margin-bottom:25px}
+ .warehouse3d-top{display:block;margin-bottom:22px}
+ .warehouse3d-header h2{font-size:clamp(47px,11vw,62px);line-height:1;margin:9px 0 10px;letter-spacing:-.06em}
+ .warehouse3d-intro{padding:0;max-width:480px}
+ .warehouse3d-intro p{font-size:14px;line-height:1.48;max-width:450px;margin:0 0 10px;color:#49606c}
+ .warehouse3d-intro>span{font-size:9px;letter-spacing:.06em}
+ .warehouse3d-layout{display:flex;flex-direction:column;min-height:0}
+ .warehouse3d-stage{height:min(105vw,420px);min-height:315px}
+ .warehouse3d-stage-top{top:12px;left:12px;right:12px}.warehouse3d-stage-top>span:first-child{font-size:9px;padding:8px 10px}
+ .warehouse3d-stage-bottom{bottom:11px;left:10px;right:10px}.warehouse3d-stage-bottom>span{font-size:8px;max-width:136px;line-height:1.6}
+ .warehouse3d-stage-actions button{width:40px;height:40px;min-height:40px}
+ .warehouse3d-index{display:flex;flex-direction:column;gap:0;background:#f7f7f2;padding:13px 22px 23px}
+ .warehouse3d-index-head{border:0;padding:2px 0 10px}
+ .warehouse-focus{display:grid;grid-template-columns:27px minmax(0,1fr) 16px;gap:10px;padding:13px 5px;min-height:58px;border-bottom:1px solid #d4dcdd;margin:0!important}
+ .warehouse-focus strong{font-size:14px}.warehouse-focus small{display:none}.warehouse-focus .focus-arrow{display:block;font-size:14px}
+ .warehouse3d-footnote{padding-top:15px}.warehouse3d-footnote p{margin:8px 0 15px;line-height:1.4;font-size:11px;max-width:none}
+ .warehouse-reveal{padding:15px 17px;font-size:10px}
+ .warehouse-detail-heading{display:block;padding-top:18px;margin-top:40px;margin-bottom:18px}
+ .warehouse-detail-heading h3{font-size:46px;margin:12px 0 8px}.warehouse-detail-heading p{font-size:13px;line-height:1.4}
+ .warehouse-detail-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding-bottom:16px;scrollbar-width:thin}
+ .warehouse-detail{flex:0 0 73vw;scroll-snap-align:start;min-width:0}
+ .warehouse-detail-canvas{height:245px}.warehouse-detail-canvas .detail-loading{font-size:9px}
+ .warehouse-detail-caption{display:grid;grid-template-columns:auto 1fr auto;gap:8px;padding:12px 0}
+ .warehouse-detail-caption strong{font-size:14px;grid-column:auto;grid-row:auto}
+ /* A distinct tactile showroom after the architectural tour. */
+ .material{order:4;padding:55px 22px 65px;background:#d7e1e4;color:#193247}
+ .material-heading{display:block;margin-bottom:19px}
+ .material-heading h2{font-size:clamp(47px,11vw,66px);margin:0 0 13px}
+ .material-heading>p{width:auto;max-width:360px;font-size:14px;line-height:1.45;margin:0}
+ .material-grid{display:block;border:0;min-height:0}
+ .material-stage{height:320px;min-height:320px;border:0}
+ .material-options{padding:27px 22px 30px}
+ .material-options h3{font-size:37px;margin:13px 0 12px}
+ .material-options>p{font-size:13px;line-height:1.45;margin-bottom:13px}
+ .fabric-choices{margin:5px 0 0}.fabric-option{min-height:55px;padding:10px 0}
+ .fabric-option .swatch{width:30px;height:30px}.fabric-option>span:nth-child(2){font-size:12px}
+ .dark-button{margin-top:19px;min-height:50px}.material-note{margin-top:10px}
+ .stage-overline,.stage-rotate{font-size:8px}.stage-overline{left:14px;top:14px}.stage-rotate{left:14px;bottom:12px}.stage-reset{right:14px;bottom:14px}
+ /* Heritage is a short, concrete proof section on phones. */
+ .intro{order:5;padding:57px 22px 60px;background:#f7f4ed}
+ .intro-grid{display:flex;flex-direction:column;gap:14px}
+ .intro-left .section-display{font-size:clamp(46px,11vw,60px);line-height:1.05;margin:0}
+ .intro-photo{display:none}
+ .intro-main-photo{margin:0 0 13px;width:100%}
+ .intro-main-photo img{height:240px;width:100%;object-fit:cover;object-position:center}
+ .intro-main-photo figcaption{font-size:8px}
+ .intro-description{padding:0;max-width:100%}
+ .intro-description .tiny-label{font-size:9px}
+ .intro-description p{font-size:15px;line-height:1.52;margin:10px 0}
+ .intro-description p+p{font-size:13px;line-height:1.5;margin:8px 0 16px}
+ .fact-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:27px 0 0}
+ .fact-strip>div{padding:15px 8px!important;gap:4px}
+ .fact-strip strong{font-size:clamp(13px,3.65vw,20px);line-height:1.2;letter-spacing:-.045em}
+ .fact-strip small{font-size:10px;line-height:1.35}.fact-key{font-size:9px;margin:0}
+ .making{order:6;padding:56px 22px 64px;background:#ebe4d8}
+ .making-head{display:block;margin:0 0 22px}
+ .making-head h2{font-size:clamp(46px,11vw,67px);margin:0 0 13px}
+ .making-head>p{max-width:360px;font-size:14px;line-height:1.45;margin:0}
+ .making-grid{display:flex;flex-direction:column;gap:22px}
+ .making-image img{height:245px}.making-image figcaption{font-size:9px}
+ .making-stage{min-height:58px;padding:13px 0;grid-template-columns:27px 1fr 20px;gap:7px}
+ .making-stage strong{font-size:22px}.making-detail{font-size:13px;line-height:1.45;margin:18px 0 14px;padding:0}
+ .making-list .editorial-link{margin:8px 0 0;font-size:10px}
+ .responsibility{order:7;display:flex;flex-direction:column;background:#bdcbc5}
+ .responsibility-image{min-height:0;height:250px}.responsibility-image img{height:100%;object-fit:cover}
+ .responsibility-content{padding:51px 22px 56px}
+ .responsibility-content h2{font-size:clamp(46px,11vw,66px);margin:17px 0 14px}
+ .responsibility-content>p{font-size:14px;line-height:1.5;margin-bottom:20px}
+ .cert-intro{font-size:9px}.certs{gap:6px}.certs span{font-size:10px;padding:8px 9px}
+ .contact{order:8;padding:58px 22px 66px;background:#172e46;color:#f3f2ea}
+ .contact .section-no{border-color:#ffffff55}.contact .section-no span{color:#bfcad3}
+ .contact-grid{display:block}
+ .contact-grid h2{font-size:clamp(51px,11.5vw,73px);line-height:1.03;margin:10px 0 20px}
+ .contact-aside{padding:0}.contact-aside p{font-size:15px;line-height:1.5;color:#ced9df;margin:0 0 20px}
+ .contact-button{width:100%;max-width:100%;min-height:56px;background:#f1e5cf;color:#152b42;justify-content:space-between;padding:0 19px}
+ .contact-mail{display:inline-block;color:#fff;margin-top:23px;font-size:14px}
+ .footer{padding:46px 22px 21px}.footer-top{display:block;padding:0 0 32px}
+ .footer-links{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
+ .footer-links>div{min-width:0}.footer-links a{font-size:12px}
+ .footer-bottom{font-size:9px;gap:10px;flex-wrap:wrap}
+ .footer-bottom>span:nth-child(2){display:none}
+ .modal-content{max-height:95dvh;padding:24px 20px}
+}
+@media(max-width:370px){:root{--pad:17px}.hero-editorial{padding-left:17px;padding-right:17px}.hero-type{font-size:13.15vw}.hero-sample-cta{margin-left:0;display:flex;width:max-content}.hero-intro .link-underline{display:flex;width:max-content}.hero-visual{height:248px}.hero-bottom-bar{padding:13px 17px}.collection,.material,.intro,.making,.contact{padding-left:17px;padding-right:17px}.warehouse3d>.section-no,.warehouse3d-top,.warehouse-detail-heading,.warehouse-detail-grid{margin-left:17px;margin-right:17px}.warehouse3d-index{padding-left:17px;padding-right:17px}.warehouse3d-stage{height:310px;min-height:310px}.warehouse3d-stage-bottom>span{display:none}.warehouse-detail{flex-basis:80vw}.responsibility-content{padding-left:17px;padding-right:17px}.site-head{padding:0 17px}}
+@media(prefers-reduced-motion:reduce){#fabricCanvas,.warehouse3d-stage canvas,.warehouse-detail-canvas canvas{transition:none!important}}
+
+@media(max-width:700px){.hero-visual{width:calc(100% - 20px)}.hero-type .type-mask:last-child span{font-size:1em}}
+
+@media(max-width:700px){.machine-showcase{order:5}.material{order:4}.intro{order:7}.making{order:6}.responsibility{order:8}.contact{order:9}}
